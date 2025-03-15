@@ -1,1 +1,141 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>二次元网站</title>
+</head>
+<body>
+	
+    <style>
+		/* .si1{
+			background-image: url('背景图2.jpg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 500px;
+			height: 700px;
+			opacity: 70%;
+			color: #55aa00;
+			display: flex;
+			flex-direction: column;
+			margin-top: 30px;
+			
+		} */
+       .si{
+            background-image: url('背景图1.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 70%;
+            width: 1700px;
+            height: 900px;
+        }
+       .yi{
+            position: relative;
+        }
+       .er4{
+            position: absolute;
+            color: #55ff00;
+			font-size: 100px;
+			  width: 600px;
+            height: 200px;
+            top: 20px;
+            left: 20px;
+          
+        }
+       .er3{
+            position: absolute;
+			
+            left: 400px;
+            top: 460px;
+        }
+       .er2{
+            position: absolute;
+            left: 400px;
+            top: 430px;
+        }
+       .er1{
+		  
+            position: absolute;
+            left: 400px;
+            top: 400px;
+        }
+		.san1{
+			position: absolute;
+			left: 15px;
+			top: 750px;
+		}
+		.san2{
+			position: absolute;
+			left: 200px;
+			top: 750px;
+		}
+    </style>
+	<div class="si">
+	
+    <form class="yi" id="yiid" >
+        <h1 class="er4" width="600px" height="300px">神秘的网址</h1>
+        <input  class="er1" type="text" placeholder="请输入账号(●'◡'●)" id="erdi" name="erdi"/>
+        <input  class="er2" type="password" placeholder="请输入密码╰(*°▽°*)╯" id="sandi" name="sandi"/>
+        <button type="submit" class="er3">提交</button>
+        
+    </form>
+	<form class="yi2" id="yiid1">
+		<input  class="san1" type="password" placeholder="这里是邀请码输入框" id="yaoqin"/>
+		<button class="san2" type="submit">提交</button>
+	</form>
+	
+	
+	</div>
+	<!-- <div class="si1">
+		<ul>
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+			<li>网站链接入口：登入后即可显示</li><br /><br />
+		</ul>
+	</div> -->
+    <script>
+		document.getElementById('yiid1').addEventListener('submit', function (s) {
+		    s.preventDefault(); 
+		    var yaoqing = document.getElementById('yaoqin').value;
+		    
+		    var accounts = [
+				{yaoqing:'077896'},
+				{yaoqing:'123654'},
+				{yaoqing:'456755'}
+            ];
+			var yaoqi = accounts.some(function (account) {
+		        return account.yaoqing===yaoqing;
+		    });
+		    if (yaoqi) {
+		        alert('登录成功，欢迎'+ '异乡的旅行者' + '!');
+		        window.location.href ='home.html';
+		    } else {
+		        alert('未知的邀请码(╯°□°)╯︵ ┻━┻');
+		    }
+		});
+		
+		
+		    document.getElementById('yiid').addEventListener('submit', function (e) {
+            e.preventDefault(); 
+            var username = document.getElementById('erdi').value;
+            var password = document.getElementById('sandi').value;
+            var accounts = [
+                { username: '蔡徐坤', password: '114514' },
+                { username: 'hxzs', password: '1369293' }
+            ];
+            
+            var isValid = accounts.some(function (account) {
+                return account.username === username && account.password === password;
+            });
+            if (isValid) {
+                alert('登录成功，欢迎'+ username + '!');
+                window.location.href = 'home.html';
+            } else {
+                alert('账号或密码错误！');
+            }
+        });
+    </script>
+</body>
+</html>
